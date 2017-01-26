@@ -357,9 +357,10 @@ function updateState(animated) {
   var meters = d3.selectAll("path.meter")
     .on("mouseover", tip.show)
     .on("mouseout", tip.hide);
-
+  
   if (animated) {
     meters = meters.transition();
+    tip.hide();
   }
 
   meters.attr("fill", function(d) {
