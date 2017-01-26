@@ -78,25 +78,5 @@
         </div>
       </div>
     </div>
-
-    <div class="container">
-      <div id="methodology" class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <h2>A Note on Methodology</h2>
-
-          <p>As a starting point for this visualization, we used data from the City of Copenhagen's <a href="http://data.kk.dk">open data project</a>. Namely, we used GeoJSON-formatted datasets to render the <a href="http://data.kk.dk/dataset/betalingszoner">parking zones</a> and <a href="http://data.kk.dk/dataset/parkomater">parking meters</a> throughout the city.</p>
-
-          <p>To find out how people use the parking meters, we used a record of <a href="http://data.kk.dk/dataset/parkomat-transaktioner">all parking meter transactions</a> for the year 2014, also published by the City of Copenhagen. Since the data set is very large, too large to load and process in short time, we decided to cut it down to just two weeks of information, one regular August week (18th to 24th) and one regular December (15th to 21st) week.</p>
-
-          <p>Furthermore, to extract some useful, easily presentable statistics (the raw data turned out to be hard to visualize), we aggregated the transactions into hourly data for each parking meter. The hourly data gives the number of transactions and the average parking duration of the cars currently holding a ticket.</p>
-
-          <p>We pre-processed the data using Python; here are the scripts used to <a href="data/parse_weeks.py">slice the transactions data</a> and <a href="data/build_machines.py">compute hourly statistics for each parking meter</a>.</p>
-
-          <p>The visualization is predominantly built with <a href="https://d3js.org">d3.v4.js</a>, which is used to layout and animate parking meters. The underlying map is built with <a href="http://leafletjs.com/">Leaflet.js</a> because it provides beautiful, efficient and user-friendly rendering of streets.</p>
-
-          <p>The image used as a background in the header is <a href="https://www.flickr.com/photos/paytonc/5380140986/">sourced from Flickr</a>. It has a <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons license</a>.</p>
-        </div>
-      </div>
-    </div>
   </body>
 </html>
