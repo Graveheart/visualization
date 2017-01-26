@@ -524,7 +524,7 @@ STORIES = [
         state.timeouts.push(setTimeout(function(x) {
           state.menu.time = x;
           updateState(true);
-        }, i * 250, i));
+        }, i * 1000, i));
       }
     }
   },
@@ -541,7 +541,7 @@ STORIES = [
         state.timeouts.push(setTimeout(function(x) {
           state.menu.time = x;
           updateState(true);
-        }, i * 250, i));
+        }, i * 1000, i));
       }
     }
   },
@@ -558,7 +558,7 @@ STORIES = [
         state.timeouts.push(setTimeout(function(x) {
           state.menu.time = x;
           updateState(true);
-        }, i * 250, i));
+        }, i * 1000, i));
       }
     }
   },
@@ -571,11 +571,11 @@ STORIES = [
       state.menu.time = 20;
       state.map.setView([55.672513, 12.570419], 17);
       updateState(true);
-      state.timeouts.push(setTimeout(function() { state.menu.day = "tuesday"; updateState(true); }, 500));
-      state.timeouts.push(setTimeout(function() { state.menu.day = "wednesday"; updateState(true); }, 2 * 500));
-      state.timeouts.push(setTimeout(function() { state.menu.day = "thursday"; updateState(true); }, 3 * 500));
-      state.timeouts.push(setTimeout(function() { state.menu.day = "friday"; updateState(true); }, 4 * 500));
-      state.timeouts.push(setTimeout(function() { state.menu.day = "saturday"; updateState(true); }, 5 * 500));
+      state.timeouts.push(setTimeout(function() { state.menu.day = "tuesday"; updateState(true); }, 2500));
+      state.timeouts.push(setTimeout(function() { state.menu.day = "wednesday"; updateState(true); }, 2 * 2500));
+      state.timeouts.push(setTimeout(function() { state.menu.day = "thursday"; updateState(true); }, 3 * 2500));
+      state.timeouts.push(setTimeout(function() { state.menu.day = "friday"; updateState(true); }, 4 * 2500));
+      state.timeouts.push(setTimeout(function() { state.menu.day = "saturday"; updateState(true); }, 5 * 2500));
     }
   },
   {
@@ -587,8 +587,8 @@ STORIES = [
       state.menu.time = 20;
       state.map.setView([55.702759, 12.570033], 15);
       updateState(true);
-      state.timeouts.push(setTimeout(function() { state.menu.day = "tuesday"; updateState(true); }, 1500));
-      state.timeouts.push(setTimeout(function() { state.menu.day = "wednesday"; updateState(true); }, 2 * 1500));
+      state.timeouts.push(setTimeout(function() { state.menu.day = "tuesday"; updateState(true); }, 4500));
+      state.timeouts.push(setTimeout(function() { state.menu.day = "wednesday"; updateState(true); }, 2 * 4500));
     }
   },
   {
