@@ -248,6 +248,10 @@ p {
   font-weight: 100;
 }
 
+.legend-container {
+  height: 120px;
+}
+
 #color-legend {
   padding-top: 25px;
 }

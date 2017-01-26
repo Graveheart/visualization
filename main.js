@@ -524,7 +524,7 @@ STORIES = [
         state.timeouts.push(setTimeout(function(x) {
           state.menu.time = x;
           updateState(true);
-        }, i * 1000, i));
+        }, i * 600, i));
       }
     }
   },
@@ -541,7 +541,7 @@ STORIES = [
         state.timeouts.push(setTimeout(function(x) {
           state.menu.time = x;
           updateState(true);
-        }, i * 1500, i));
+        }, i * 750, i));
       }
     }
   },
@@ -558,7 +558,7 @@ STORIES = [
         state.timeouts.push(setTimeout(function(x) {
           state.menu.time = x;
           updateState(true);
-        }, i * 1000, i));
+        }, i * 600, i));
       }
     }
   },
@@ -587,8 +587,8 @@ STORIES = [
       state.menu.time = 20;
       state.map.setView([55.702759, 12.570033], 15);
       updateState(true);
-      state.timeouts.push(setTimeout(function() { state.menu.day = "tuesday"; updateState(true); }, 5000));
-      state.timeouts.push(setTimeout(function() { state.menu.day = "wednesday"; updateState(true); }, 2 * 5000));
+      state.timeouts.push(setTimeout(function() { state.menu.day = "tuesday"; updateState(true); }, 3000));
+      state.timeouts.push(setTimeout(function() { state.menu.day = "wednesday"; updateState(true); }, 2 * 3000));
     }
   },
   {
