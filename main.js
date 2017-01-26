@@ -339,6 +339,8 @@ function updateState(animated) {
 
     return getAdjustedSize(1.5 * Math.sqrt(state.sizeScale(count))) + 1;
   });
+  
+  d3.select(".d3-tip").remove();
 
   // Create tooltip to be applied to all meters
   var tip = d3.tip()
@@ -360,7 +362,6 @@ function updateState(animated) {
   
   if (animated) {
     meters = meters.transition();
-    tip.hide();
   }
 
   meters.attr("fill", function(d) {
