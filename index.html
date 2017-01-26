@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./bower_components/bootstrap-select/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="./bower_components/leaflet/dist/leaflet.css"/>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="./bower_components/moment/min/moment.min.js"></script>
+    <script src="./bower_components/d3.v4.min.js"></script>
+    <script src="./bower_components/leaflet/dist/leaflet.js"></script>
+    <script src="./bower_components/topojson.v2.min.js"></script>
+    <script src="./bower_components/d3-geo-projection.v1.min.js"></script>
+    <script src="./bower_components/d3-legend.min.js"></script>
+    <script src="./bower_components/d3-tip/index.js"></script>
+    <script src="./main.js" charset="utf-8"></script>
+    <title>Visualization Project | Parking</title>
+  </head>
+  <body>
+    <header id="intro-header" style="background-image: url('img/background.jpg')">
+      <div class="container">
+        <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>
+        <h1>Copenhagen Parking</h1>
+        <p class="byline">
+          Visualization Final Project
+        </p>
+        <p class="authors">
+          <em>by <a href="mailto:pbk644@alumni.ku.dk">Venelin Bankov Banov</a>
+        </p>
+      </div>
+    </header>
+
+    <div id="visualization" class="container">
+      <div class="row">
+        <div class="col-md-12 story">
+          <a id="story-prev" class="carousel-control left" href="#">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <div id="story-text">
+          </div>
+          <a id="story-next" class="carousel-control right" href="#">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </div>
+      </div>
+
+      <div id="map-container">
+        <div id="map"></div>
+        <div id="time-slider" class="leaflet-control">
+          <svg></svg>
+        </div>
+        <div id="time-label" class="leaflet-control">
+          <p></p>
+        </div>
+        <div id="menu-season" class="btn-group leaflet-control" role="group">
+        </div>
+        <div id="menu-day" class="btn-group leaflet-control" role="group">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <svg id="color-legend">
+            <text x="60" y="60" font-size="13pt">
+              Average duration of stay
+            </text>
+          </svg>
+        </div>
+        <div class="col-md-6">
+          <svg id="size-legend">
+            <text x="100" y="100" font-size="13pt">
+              Number of cars parked
+            </text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="methodology" class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <h2>A Note on Methodology</h2>
+
+          <p>As a starting point for this visualization, we used data from the City of Copenhagen's <a href="http://data.kk.dk">open data project</a>. Namely, we used GeoJSON-formatted datasets to render the <a href="http://data.kk.dk/dataset/betalingszoner">parking zones</a> and <a href="http://data.kk.dk/dataset/parkomater">parking meters</a> throughout the city.</p>
+
+          <p>To find out how people use the parking meters, we used a record of <a href="http://data.kk.dk/dataset/parkomat-transaktioner">all parking meter transactions</a> for the year 2014, also published by the City of Copenhagen. Since the data set is very large, too large to load and process in short time, we decided to cut it down to just two weeks of information, one regular August week (18th to 24th) and one regular December (15th to 21st) week.</p>
+
+          <p>Furthermore, to extract some useful, easily presentable statistics (the raw data turned out to be hard to visualize), we aggregated the transactions into hourly data for each parking meter. The hourly data gives the number of transactions and the average parking duration of the cars currently holding a ticket.</p>
+
+          <p>We pre-processed the data using Python; here are the scripts used to <a href="data/parse_weeks.py">slice the transactions data</a> and <a href="data/build_machines.py">compute hourly statistics for each parking meter</a>.</p>
+
+          <p>The visualization is predominantly built with <a href="https://d3js.org">d3.v4.js</a>, which is used to layout and animate parking meters. The underlying map is built with <a href="http://leafletjs.com/">Leaflet.js</a> because it provides beautiful, efficient and user-friendly rendering of streets.</p>
+
+          <p>The image used as a background in the header is <a href="https://www.flickr.com/photos/paytonc/5380140986/">sourced from Flickr</a>. It has a <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons license</a>.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

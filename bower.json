@@ -1,0 +1,24 @@
+{
+  "name": "visualization_project",
+  "homepage": "https://github.com/Graveheart/visualization",
+  "authors": [
+    "Venelin Banov <pbk644@alumni.ku.dk>",
+  ],
+  "description": "Interactive Data Exploration Project 5",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "bootstrap-select": "^1.12.1",
+    "moment": "^2.17.1",
+    "d3-tip": "^0.7.1"
+  }
+}
