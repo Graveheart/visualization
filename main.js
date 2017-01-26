@@ -541,7 +541,7 @@ STORIES = [
         state.timeouts.push(setTimeout(function(x) {
           state.menu.time = x;
           updateState(true);
-        }, i * 1000, i));
+        }, i * 1500, i));
       }
     }
   },
@@ -587,8 +587,8 @@ STORIES = [
       state.menu.time = 20;
       state.map.setView([55.702759, 12.570033], 15);
       updateState(true);
-      state.timeouts.push(setTimeout(function() { state.menu.day = "tuesday"; updateState(true); }, 4500));
-      state.timeouts.push(setTimeout(function() { state.menu.day = "wednesday"; updateState(true); }, 2 * 4500));
+      state.timeouts.push(setTimeout(function() { state.menu.day = "tuesday"; updateState(true); }, 5000));
+      state.timeouts.push(setTimeout(function() { state.menu.day = "wednesday"; updateState(true); }, 2 * 5000));
     }
   },
   {
